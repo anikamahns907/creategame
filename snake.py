@@ -21,7 +21,7 @@ yellow = pygame.Color(255,255,0)
 pygame.init()
 
 # Initialise game window
-pygame.display.set_caption('GeeksforGeeks Snakes')
+pygame.display.set_caption('Anika\'s Game')
 game_window = pygame.display.set_mode((window_x, window_y))
 
 # FPS (frames per second) controller
@@ -71,7 +71,7 @@ def show_score(choice, color, font, size):
 def game_over():
 
 	# creating font object my_font
-	my_font = pygame.font.SysFont('times new roman', 50)
+	my_font = pygame.font.SysFont('', 50)
 	
 	# creating a text surface on which text
 	# will be drawn
@@ -127,7 +127,7 @@ while True:
 		direction = 'RIGHT'
 
 	# Moving the snake
-	if direction == 'UP':
+	if direction == '\Down':
 		snake_position[1] -= 10
 	if direction == 'DOWN':
 		snake_position[1] += 10
@@ -147,8 +147,8 @@ while True:
 		snake_body.pop()
 		
 	if not fruit_spawn:
-		fruit_position = [random.randrange(1, (window_x//10)) * 10,
-						random.randrange(1, (window_y//10)) * 10]
+		fruit_position = [random.randrange(1, (window_x//10)) * 5,
+						random.randrange(1, (window_y//10)) * 5]
 		
 	fruit_spawn = True
 	game_window.fill(black)
