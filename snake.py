@@ -6,8 +6,8 @@ import random
 snake_speed = 20
 
 # Window size
-window_x = 800
-window_y = 600
+window_x = 720
+window_y = 480
 
 # defining colors
 black = pygame.Color(0, 0, 0)
@@ -21,7 +21,7 @@ yellow = pygame.Color(255,255,0)
 pygame.init()
 
 # Initialise game window
-pygame.display.set_caption('Anika\'s snake game') 
+pygame.display.set_caption('GeeksforGeeks Snakes')
 game_window = pygame.display.set_mode((window_x, window_y))
 
 # FPS (frames per second) controller
@@ -37,8 +37,8 @@ snake_body = [[100, 50],
 			[70, 50]
 			]
 # fruit position
-fruit_position = [random.randrange(10, (window_x//10)) * 10,
-				random.randrange(10, (window_y//10)) * 10]
+fruit_position = [random.randrange(1, (window_x//10)) * 10,
+				random.randrange(1, (window_y//10)) * 10]
 
 fruit_spawn = True
 
@@ -88,17 +88,15 @@ def game_over():
 	# blit wil draw the text on screen
 	game_window.blit(game_over_surface, game_over_rect)
 	pygame.display.flip()
-
-    
 	
 	# after 2 seconds we will quit the program
-    #time.sleep(2)
+	time.sleep(2)
 	
 	# deactivating pygame library
-	#pygame.quit()
+	pygame.quit()
 	
 	# quit the program
-	#quit()
+	quit()
 
 
 # Main Function
@@ -161,7 +159,7 @@ while True:
 	pygame.draw.rect(game_window, white, pygame.Rect(
 		fruit_position[0], fruit_position[1], 10, 10))
 
-	# Game Over conditions f
+	# Game Over conditions
 	if snake_position[0] < 0 or snake_position[0] > window_x-10:
 		game_over()
 	if snake_position[1] < 0 or snake_position[1] > window_y-10:
